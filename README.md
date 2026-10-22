@@ -13,13 +13,28 @@
 
 GitHub 仓库：[SUJIElearning/zhaoyu-mozi-engineer](https://github.com/SUJIElearning/zhaoyu-mozi-engineer)
 
-克隆到 DSH 技能目录（一行命令）：
+### 方式一：在 DSH 里说一句话
+
+对 DSH 的 AI 说这句话（**要带上下面的仓库地址**）：
+
+> 帮我把这个 skill 装进 DSH 技能目录：https://github.com/SUJIElearning/zhaoyu-mozi-engineer
+
+AI 会克隆到 `$DSH_HOME/skills/zhaoyu-mozi-engineer`，装完立即生效。
+
+> ⚠️ 实测提醒（真实会话验证过，不是猜测）：
+> - **必须带仓库地址**。只报"zhaoyu-mozi-engineer"这个名字时，AI 不知道仓库在哪，会去猜地址（实测中它猜了 `github.com/zhaoyu-mozi-engineer`、`zhaoyu/mozi-engineer`，全错）。
+> - 如果 DSH 提示需要**网络访问或写入权限**，按提示批准即可——技能目录在会话工作区之外，默认沙箱策略可能拦截。
+> - 若 AI 卡住，直接用下面的方式二。
+
+### 方式二：自己执行命令（最稳，已实测）
+
+复制到终端粘贴：
 
 ```bash
 git clone https://github.com/SUJIElearning/zhaoyu-mozi-engineer.git "$HOME/.dsh/skills/zhaoyu-mozi-engineer"
 ```
 
-DSH 会监视技能目录，克隆进去**立即生效，不用重启、不用改配置**。装好后在 DSH 对话里说 **"加载墨子"** 即可。
+DSH 会监视技能目录，克隆进去**立即生效，不用重启、不用改配置**。两种方式装好后，在 DSH 对话里说 **"加载墨子"** 即可。
 
 装完目录结构是这样（DSH 只认 `SKILL.md` 所在目录，其他是文档）：
 
