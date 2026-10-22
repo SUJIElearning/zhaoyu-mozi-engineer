@@ -9,25 +9,27 @@
 
 加载这个 skill 后，无论你是 **找插件、装插件、自己写插件、还是插件出 bug 要调试**，AI 都会自动切换到墨子模式——先独立排查、再汇报结论、不编造、不猜测、测试驱动。
 
-## 一句话安装 🚀
+## 安装
 
-**不用碰终端。** 直接在 DSH 对话里对 AI 说这句，AI 会替你下载安装好：
+### 方式 A：自己执行命令（最可靠）
 
-> **"帮我安装 zhaoyu-mozi-engineer 这个 skill"**
-
-AI 会用 shell 执行下面这条命令，把墨子放进 DSH 的技能目录——**装完立即生效，不用重启、不用改配置**：
+复制这条命令粘贴进终端（Windows / macOS / Linux 通用），墨子就装好了：
 
 ```bash
 git clone https://github.com/SUJIElearning/zhaoyu-mozi-engineer.git "$HOME/.dsh/skills/zhaoyu-mozi-engineer"
 ```
 
-装好后，再说一句：
+DSH 会监视技能目录，克隆进去**立即生效，不用重启、不用改配置**。装好后在 DSH 对话里说 **"加载墨子"** 即可。
 
-> **"加载墨子"**
+### 方式 B：让 AI 帮忙装（可能要批准权限）
 
-就完事了，AI 立刻变成插件工程师。
+在 DSH 对话里对 AI 说：
 
-**想自己动手也行**（Windows / macOS / Linux 通用，粘贴进终端）：
+> "帮我安装 zhaoyu-mozi-engineer 这个 skill"
+
+AI 会用 shell 执行上面的命令。**注意**：写技能目录可能触发 DSH 的文件沙箱授权，你需要按提示批准一次权限才能完成。批准后即装好，然后说"加载墨子"。
+
+> ⚠️ 诚实声明：方式 B 能否一句话成功取决于你的 DSH 沙箱配置和网络状况，可能需要一次权限批准或多次重试；方式 A 自己执行命令是确定可行的。如果还没装 git，用下面的备选（下载 zip 解压到技能目录）：
 
 ```powershell
 # Windows PowerShell
