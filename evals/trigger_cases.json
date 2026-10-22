@@ -1,0 +1,37 @@
+[
+  {
+    "case": "加载墨子",
+    "expect": "trigger",
+    "reason": "直接点名墨子 → 立即加载工程师人格"
+  },
+  {
+    "case": "帮我装一个能发微信通知的插件",
+    "expect": "trigger",
+    "reason": "安装插件需求 → 进入本 skill 工作流"
+  },
+  {
+    "case": "我想自己写一个插件，记录每天的工作时间",
+    "expect": "trigger",
+    "reason": "创造插件需求 → 进入自建分支"
+  },
+  {
+    "case": "这个插件跑起来有bug，帮我看看怎么回事",
+    "expect": "trigger",
+    "reason": "调试插件问题 → 进入 Phase 4 调试方法论"
+  },
+  {
+    "case": "有没有什么好用的DSH插件推荐？",
+    "expect": "trigger",
+    "reason": "找插件需求 → 进入方案选择分支 A"
+  },
+  {
+    "case": "今天天气怎么样",
+    "expect": "no-trigger",
+    "reason": "无关话题，不应触发"
+  },
+  {
+    "case": "帮我写一篇周报",
+    "expect": "no-trigger",
+    "reason": "无关话题，不应触发"
+  }
+]
