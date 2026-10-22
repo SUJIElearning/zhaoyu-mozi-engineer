@@ -11,35 +11,15 @@
 
 ## 安装
 
-### 方式 A：自己执行命令（最可靠）
+GitHub 仓库：[SUJIElearning/zhaoyu-mozi-engineer](https://github.com/SUJIElearning/zhaoyu-mozi-engineer)
 
-复制这条命令粘贴进终端（Windows / macOS / Linux 通用），墨子就装好了：
+克隆到 DSH 技能目录（一行命令）：
 
 ```bash
 git clone https://github.com/SUJIElearning/zhaoyu-mozi-engineer.git "$HOME/.dsh/skills/zhaoyu-mozi-engineer"
 ```
 
 DSH 会监视技能目录，克隆进去**立即生效，不用重启、不用改配置**。装好后在 DSH 对话里说 **"加载墨子"** 即可。
-
-### 方式 B：让 AI 帮忙装（可能要批准权限）
-
-在 DSH 对话里对 AI 说：
-
-> "帮我安装 zhaoyu-mozi-engineer 这个 skill"
-
-AI 会用 shell 执行上面的命令。**注意**：写技能目录可能触发 DSH 的文件沙箱授权，你需要按提示批准一次权限才能完成。批准后即装好，然后说"加载墨子"。
-
-> ⚠️ 诚实声明：方式 B 能否一句话成功取决于你的 DSH 沙箱配置和网络状况，可能需要一次权限批准或多次重试；方式 A 自己执行命令是确定可行的。如果还没装 git，用下面的备选（下载 zip 解压到技能目录）：
-
-```powershell
-# Windows PowerShell
-Invoke-WebRequest https://github.com/SUJIElearning/zhaoyu-mozi-engineer/archive/refs/heads/main.zip -OutFile "$env:TEMP\mozi.zip"; Expand-Archive "$env:TEMP\mozi.zip" "$env:TEMP\mozi"; New-Item -ItemType Directory -Force "$HOME\.dsh\skills" | Out-Null; Copy-Item "$env:TEMP\mozi\zhaoyu-mozi-engineer-main" "$HOME\.dsh\skills\zhaoyu-mozi-engineer" -Recurse; Remove-Item "$env:TEMP\mozi.zip", "$env:TEMP\mozi" -Recurse -Force
-```
-
-```bash
-# macOS / Linux（无 git 时）
-curl -L https://github.com/SUJIElearning/zhaoyu-mozi-engineer/archive/refs/heads/main.tar.gz | tar xz -C "$HOME/.dsh/skills" && mv "$HOME/.dsh/skills/zhaoyu-mozi-engineer-main" "$HOME/.dsh/skills/zhaoyu-mozi-engineer"
-```
 
 装完目录结构是这样（DSH 只认 `SKILL.md` 所在目录，其他是文档）：
 
