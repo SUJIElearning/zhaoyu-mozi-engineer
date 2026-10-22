@@ -9,25 +9,47 @@
 
 加载这个 skill 后，无论你是 **找插件、装插件、自己写插件、还是插件出 bug 要调试**，AI 都会自动切换到墨子模式——先独立排查、再汇报结论、不编造、不猜测、测试驱动。
 
-## 小白 3 步用起来
+## 一句话安装 🚀
 
-**第 1 步：安装 skill 包**
+把这条命令粘贴进终端（Windows / macOS / Linux 通用），墨子就装好了：
 
-把这个仓库克隆（或下载）到 DSH 的技能目录：
-
-```powershell
-# 方式 A：git 克隆到技能目录
-git clone https://github.com/SUJIElearning/zhaoyu-mozi-engineer.git "$env:USERPROFILE\.dsh\skills\zhaoyu-mozi-engineer"
-
-# 方式 B：手动下载解压，确保目录结构是：
-#   ~/.dsh/skills/zhaoyu-mozi-engineer/
-#   ├── SKILL.md
-#   ├── README.md
-#   ├── references/guide.md
-#   └── evals/trigger_cases.json
+```bash
+git clone https://github.com/SUJIElearning/zhaoyu-mozi-engineer.git "$HOME/.dsh/skills/zhaoyu-mozi-engineer"
 ```
 
-（已有 DSH 技能目录后，重启 DSH 或新开对话即可识别。）
+**为什么是一条命令？** DSH 会监视技能目录，克隆进去**立即生效，不用重启、不用改配置**。然后回 DSH 对话里说一句：
+
+> **"加载墨子"**
+
+就完事了。如果还没装 git，用这个备选（下载 zip 解压到技能目录）：
+
+```powershell
+# Windows PowerShell
+Invoke-WebRequest https://github.com/SUJIElearning/zhaoyu-mozi-engineer/archive/refs/heads/main.zip -OutFile "$env:TEMP\mozi.zip"; Expand-Archive "$env:TEMP\mozi.zip" "$env:TEMP\mozi"; New-Item -ItemType Directory -Force "$HOME\.dsh\skills" | Out-Null; Copy-Item "$env:TEMP\mozi\zhaoyu-mozi-engineer-main" "$HOME\.dsh\skills\zhaoyu-mozi-engineer" -Recurse; Remove-Item "$env:TEMP\mozi.zip", "$env:TEMP\mozi" -Recurse -Force
+```
+
+```bash
+# macOS / Linux（无 git 时）
+curl -L https://github.com/SUJIElearning/zhaoyu-mozi-engineer/archive/refs/heads/main.tar.gz | tar xz -C "$HOME/.dsh/skills" && mv "$HOME/.dsh/skills/zhaoyu-mozi-engineer-main" "$HOME/.dsh/skills/zhaoyu-mozi-engineer"
+```
+
+装完目录结构是这样（DSH 只认 `SKILL.md` 所在目录，其他是文档）：
+
+```
+~/.dsh/skills/zhaoyu-mozi-engineer/
+├── SKILL.md                  # 入口（DSH 加载用）
+├── README.md                 # 本文件
+├── LICENSE                   # MIT 许可证
+├── VERIFICATION.md           # 陌生用户验证报告
+├── references/
+│   └── guide.md              # 详细手册（含失败对照表、坑的解法）
+└── evals/
+    └── trigger_cases.json    # 触发边界测试用例
+```
+
+## 小白 3 步用起来
+
+**第 1 步：安装** → 上面那条命令即可。
 
 **第 2 步：加载墨子**
 在 DSH 对话中说：
