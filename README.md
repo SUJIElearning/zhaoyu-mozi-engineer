@@ -11,17 +11,23 @@
 
 ## 一句话安装 🚀
 
-把这条命令粘贴进终端（Windows / macOS / Linux 通用），墨子就装好了：
+**不用碰终端。** 直接在 DSH 对话里对 AI 说这句，AI 会替你下载安装好：
+
+> **"帮我安装 zhaoyu-mozi-engineer 这个 skill"**
+
+AI 会用 shell 执行下面这条命令，把墨子放进 DSH 的技能目录——**装完立即生效，不用重启、不用改配置**：
 
 ```bash
 git clone https://github.com/SUJIElearning/zhaoyu-mozi-engineer.git "$HOME/.dsh/skills/zhaoyu-mozi-engineer"
 ```
 
-**为什么是一条命令？** DSH 会监视技能目录，克隆进去**立即生效，不用重启、不用改配置**。然后回 DSH 对话里说一句：
+装好后，再说一句：
 
 > **"加载墨子"**
 
-就完事了。如果还没装 git，用这个备选（下载 zip 解压到技能目录）：
+就完事了，AI 立刻变成插件工程师。
+
+**想自己动手也行**（Windows / macOS / Linux 通用，粘贴进终端）：
 
 ```powershell
 # Windows PowerShell
